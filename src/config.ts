@@ -9,9 +9,14 @@ type DBConfig = {
     migrationConfig: MigrationConfig
 }
 
+type JWTConfig = {
+    secret: string
+}
+
 type Config = {
     api: APIConfig,
-    db: DBConfig
+    db: DBConfig,
+    jwt: JWTConfig
 }
 
 process.loadEnvFile()
@@ -38,5 +43,8 @@ export const config: Config = {
     db: {
         url: envOrThrow("DB_URL"),
         migrationConfig: migrationConfig
+    },
+    jwt: {
+        secret:envOrThrow("JWT_SECRET")
     }
 }

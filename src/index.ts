@@ -13,6 +13,10 @@ import { deleteUsersHandler } from "./api/deleteUserHandler.js";
 import { createChirpHandler } from "./api/createChirpHandler.js";
 import { getChirpHandler } from "./api/getChirpHandler.js";
 import { getChirpsHandler } from "./api/getChirpsHandler.js";
+import { refreshHandler } from "./api/refreshHandler.js";
+import { login } from "./api/loginHandler.js";
+import { revokeHandler } from "./api/revokeHandler.js";
+
 
 
 
@@ -30,7 +34,10 @@ app.get("/api/chirps", getChirpsHandler)
 app.get("/api/chirps/:chirpId", getChirpHandler)
 app.post("/api/chirps", createChirpHandler)
 app.post("/api/users", createUserHandler)
-app.post("/admin/reset", deleteUsersHandler )
+app.post("/admin/reset", deleteUsersHandler)
+app.post("/api/login", login)
+app.post("/api/refresh", refreshHandler)
+app.post("/api/revoke", revokeHandler)
 
 app.get("/api/healthz", handlerReadiness)
 app.use(errorHandler)

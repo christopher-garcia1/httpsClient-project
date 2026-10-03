@@ -1,4 +1,4 @@
-import { notfoundError } from "../../api/middleware.js";
+import { notFoundError } from "../../api/middleware.js";
 import { db } from "../index.js";
 import { NewChirp, chirps } from "../schema.js";
 import { asc, eq } from "drizzle-orm";
@@ -23,7 +23,7 @@ export async function getAllChirps() {
 export async function getChirp(chirpId: string) {
     const [result] = await db.select().from(chirps).where(eq(chirps.id, chirpId))
     if (!result) {
-        throw new notfoundError("IDNOTFOUND")
+        throw new notFoundError("IDNOTFOUND")
     }
     return result
 }

@@ -15,6 +15,27 @@
       "when": 1790268673299,
       "tag": "0001_worthless_romulus",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790716460242,
+      "tag": "0002_lovely_dagger",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791051655380,
+      "tag": "0003_bitter_queen_noir",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791066107366,
+      "tag": "0004_early_quentin_quire",
+      "breakpoints": true
     }
   ]
 }
