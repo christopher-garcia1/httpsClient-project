@@ -1,7 +1,7 @@
-import { notFoundError } from "../../api/middleware.js";
+import { forbiddenError, notFoundError} from "../../api/middleware.js";
 import { db } from "../index.js";
 import { NewChirp, chirps } from "../schema.js";
-import { asc, eq } from "drizzle-orm";
+import { and, asc, eq } from "drizzle-orm";
 
 
 
@@ -26,4 +26,13 @@ export async function getChirp(chirpId: string) {
         throw new notFoundError("IDNOTFOUND")
     }
     return result
+}
+
+export async function deleteChrip(chirpId: string, userId:string) {
+    const [result] = await db
+        .delete(chirps)
+        .where(and(
+            eq(chirps.id, chirpId),
+            eq(chirps.userId, userId)
+        ))
 }

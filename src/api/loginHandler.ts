@@ -6,7 +6,7 @@ import { UserResponse } from "./createUserHandler.js";
 import { config } from "../config.js";
 import { saveRefreshToken } from "../db/queries/refresh.js";
 
-type loginUserRequest = {
+export type loginUserRequest = {
     password: string,
     email: string,
 }

@@ -16,6 +16,8 @@ import { getChirpsHandler } from "./api/getChirpsHandler.js";
 import { refreshHandler } from "./api/refreshHandler.js";
 import { login } from "./api/loginHandler.js";
 import { revokeHandler } from "./api/revokeHandler.js";
+import { updateUserHandler } from "./api/updateUserHandler.js";
+import { deleteChirpHandler } from "./api/deleteChirpHandler.js";
 
 
 
@@ -38,8 +40,10 @@ app.post("/admin/reset", deleteUsersHandler)
 app.post("/api/login", login)
 app.post("/api/refresh", refreshHandler)
 app.post("/api/revoke", revokeHandler)
+app.put("/api/users",updateUserHandler)
 
 app.get("/api/healthz", handlerReadiness)
+app.delete("/api/chirps/:chirpId", deleteChirpHandler)
 app.use(errorHandler)
 
 
