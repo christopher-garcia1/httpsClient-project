@@ -13,10 +13,15 @@ type JWTConfig = {
     secret: string
 }
 
+type POLKAConfig = {
+    key: string
+}
+
 type Config = {
     api: APIConfig,
     db: DBConfig,
     jwt: JWTConfig
+    polka: POLKAConfig
 }
 
 process.loadEnvFile()
@@ -46,5 +51,8 @@ export const config: Config = {
     },
     jwt: {
         secret:envOrThrow("JWT_SECRET")
+    },
+    polka: {
+        key: envOrThrow("POLKA_KEY")
     }
 }

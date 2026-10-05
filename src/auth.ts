@@ -51,6 +51,19 @@ export function getBearerToken(req: Request): string {
     return parts[1]
 }
 
+export function getApiKey(req: Request): string {
+    const authHeader = req.get("Authorization")
+    if (!authHeader) {
+        throw new unauthorizedError("unauthorized")
+    }
+    const parts = authHeader.split(" ")
+    if (parts[0] !== "ApiKey" || !parts[1]) {
+        throw new unauthorizedError("unauthorized")
+    }
+    return parts[1]
+}
+
+
 
 export function makeRefreshToken() {
     const buff = randomBytes(32)
