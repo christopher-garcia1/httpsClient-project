@@ -31,6 +31,6 @@ export async function createChirpHandler(req: Request, res: Response) {
 
 
     const chirp = await createChirp({ body: cleanedBody, userId: authUserId })
-    res.status(201).json(chirp)
+    return res.status(201).json(chirp)
 }
 

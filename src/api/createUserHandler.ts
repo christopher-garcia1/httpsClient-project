@@ -20,5 +20,5 @@ export async function createUserHandler(req: Request, res: Response){
     const newUser = await createUser({ email, hashedPassword: hashed })
     const { hashedPassword, ...rest } = newUser
     const publicInfo: UserResponse = rest
-    res.status(201).json(publicInfo)    
+    return res.status(201).json(publicInfo)    
 }

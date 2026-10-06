@@ -12,5 +12,5 @@ export async function refreshHandler(req: Request, res: Response) {
         throw new unauthorizedError("invalid refresh token")
     }
     const refreshedToken = makeJWT(result.userId, 3600, config.jwt.secret)
-    res.status(200).json({token: refreshedToken})
+    return res.status(200).json({token: refreshedToken})
  }

@@ -5,5 +5,5 @@ import { revokeRefreshToken } from "../db/queries/refresh.js"
 export async function revokeHandler(req: Request, res: Response) {
     const token = getBearerToken(req)
     await revokeRefreshToken(token)
-    res.status(204).end()
+    return res.status(204).end()
 }

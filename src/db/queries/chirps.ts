@@ -1,4 +1,4 @@
-import { forbiddenError, notFoundError} from "../../api/middleware.js";
+import { notFoundError} from "../../api/middleware.js";
 import { db } from "../index.js";
 import { NewChirp, chirps } from "../schema.js";
 import { and, asc, eq } from "drizzle-orm";
@@ -35,4 +35,9 @@ export async function deleteChrip(chirpId: string, userId:string) {
             eq(chirps.id, chirpId),
             eq(chirps.userId, userId)
         ))
+}
+
+export async function getAllChirpsByUser(userId: string) {
+    const result = await db.select().from(chirps).where(eq(chirps.userId, userId))
+    return result
 }

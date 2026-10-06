@@ -8,5 +8,5 @@ export async function getChirpHandler(req: Request, res: Response) {
         throw new badRequestError("chirpId is required")
     }
     const chirp = await getChirp(chirpId)
-    res.status(200).json(chirp)
+    return res.status(200).json(chirp)
 }

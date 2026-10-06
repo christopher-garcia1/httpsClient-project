@@ -19,5 +19,5 @@ export async function updateUserHandler(req: Request, res: Response) {
     const password = await hashPassword(params.password)
     const { hashedPassword, ...rest } = await updateUser(authUserId, params.email, password)
     const publicInfo: UserResponse = rest
-    res.status(200).json(publicInfo)
+    return res.status(200).json(publicInfo)
 }

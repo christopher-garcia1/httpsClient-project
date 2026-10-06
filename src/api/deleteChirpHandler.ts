@@ -19,5 +19,5 @@ export async function deleteChirpHandler(req: Request, res: Response) {
         throw new forbiddenError("cannot delete chirp")
     }
     await deleteChrip(chirp.id, authUserId)
-    res.status(204).send()
+    return res.status(204).send()
 }

@@ -33,5 +33,5 @@ export async function login(req: Request, res: Response) {
 
     const { hashedPassword, ...rest } = grabbedUser
     const publicInfo : authUserResponse = {...rest, token, refreshToken}
-    res.status(200).json(publicInfo)
+    return res.status(200).json(publicInfo)
 }

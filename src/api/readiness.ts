@@ -2,5 +2,5 @@ import { Response, Request } from "express"
 
 export async function handlerReadiness(req: Request, res: Response) {
     res.set("Content-Type", "text/plain; charset=utf-8")
-    res.status(200).send("OK")
+    return res.status(200).send("OK")
 }

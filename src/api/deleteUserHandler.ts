@@ -10,5 +10,5 @@ export async function deleteUsersHandler(_req:Request,res:Response) {
     config.api.fileserverHits = 0
 
     await deleteUsers()
-    res.status(200).send("OK")
+    return res.status(200).send("OK")
 }
