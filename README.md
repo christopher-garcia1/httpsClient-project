@@ -423,6 +423,11 @@ Refresh-token endpoints use the refresh token in the same header format.
 * HTTP error handling and middleware
 * Automated testing with Vitest
 
+---
+
+## Motivation
+
+I built this project as part of my backend development journey with Boot.dev to strengthen my understanding of building production-style REST APIs. My goal was to move beyond basic CRUD operations and gain hands-on experience with authentication, database design, secure password handling, middleware, and webhook integration. Through this project, I applied TypeScript, Express, PostgreSQL, and Drizzle ORM to build a backend service with real-world functionality, while improving my ability to structure, test, and maintain backend applications.
 ## License
 
 This project was created as part of my backend development studies with Boot.dev.
