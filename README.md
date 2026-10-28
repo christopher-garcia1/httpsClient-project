@@ -17,7 +17,7 @@ The API supports user accounts, authentication, refresh tokens, chirps, user upg
 * JWT
 * Vitest
 
-## Getting Started
+## Quick Start
 
 ### Clone the repository
 
