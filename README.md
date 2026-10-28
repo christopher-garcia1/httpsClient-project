@@ -1,4 +1,5 @@
 # httpsClient-project
+
 A full-featured REST API built with TypeScript, Express, PostgreSQL, Drizzle ORM, and JWT authentication.
 
 # Chirpy API
@@ -9,24 +10,28 @@ The API supports user accounts, authentication, refresh tokens, chirps, user upg
 
 ## Tech Stack
 
-* TypeScript
-* Node.js
-* Express
-* PostgreSQL
-* Drizzle ORM
-* JWT
-* Vitest
+- TypeScript
+- Node.js
+- Express
+- PostgreSQL
+- Drizzle ORM
+- JWT
+- Vitest
+
+## Motivation
+
+I built this project as part of my backend development journey with Boot.dev to strengthen my understanding of building production-style REST APIs. My goal was to move beyond basic CRUD operations and gain hands-on experience with authentication, database design, secure password handling, middleware, and webhook integration. Through this project, I applied TypeScript, Express, PostgreSQL, and Drizzle ORM to build a backend service with real-world functionality while improving my ability to structure, test, and maintain backend applications.
 
 ## Quick Start
 
-### Clone the repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/christopher-garcia1/httpsClient-project.git
 cd httpsClient-project
 ```
 
-### Install dependencies
+### Install Dependencies
 
 ```bash
 npm install
@@ -44,6 +49,8 @@ JWT_SECRET=your_jwt_secret
 POLKA_KEY=your_polka_key
 ```
 
+Ensure PostgreSQL is running and `DB_URL` points to your database. Configure the remaining variables with appropriate values for your environment.
+
 Do not commit your `.env` file to GitHub.
 
 ### Start the Server
@@ -52,11 +59,27 @@ Do not commit your `.env` file to GitHub.
 npm run dev
 ```
 
-The API runs on:
+The API runs at:
 
 ```text
 http://localhost:8080
 ```
+
+## Usage
+
+You can interact with the API using tools such as Postman, Insomnia, or `curl`.
+
+Common operations include:
+
+- Check API health with `GET /api/healthz`.
+- Register an account with `POST /api/users`.
+- Authenticate with `POST /api/login`.
+- Create a chirp with `POST /api/chirps`.
+- Retrieve chirps with `GET /api/chirps`.
+- Retrieve a specific chirp with `GET /api/chirps/:chirpId`.
+- Delete a chirp with `DELETE /api/chirps/:chirpId`.
+
+Protected endpoints require the appropriate Bearer token in the `Authorization` header. See the API Routes section for request bodies, response examples, and additional endpoints.
 
 ---
 
@@ -405,29 +428,37 @@ Refresh-token endpoints use the refresh token in the same header format.
 
 # Features
 
-* User registration
-* Secure password hashing
-* JWT authentication
-* Refresh token authentication
-* Refresh token revocation
-* Protected API routes
-* Chirp creation
-* Chirp retrieval
-* Chirp filtering by author
-* Chirp deletion
-* Chirpy Red user upgrades
-* Polka webhook integration
-* PostgreSQL database
-* Drizzle ORM
-* TypeScript type safety
-* HTTP error handling and middleware
-* Automated testing with Vitest
+- User registration
+- Secure password hashing
+- JWT authentication
+- Refresh token authentication
+- Refresh token revocation
+- Protected API routes
+- Chirp creation
+- Chirp retrieval
+- Chirp filtering by author
+- Chirp deletion
+- Chirpy Red user upgrades
+- Polka webhook integration
+- PostgreSQL database
+- Drizzle ORM
+- TypeScript type safety
+- HTTP error handling and middleware
+- Automated testing with Vitest
 
 ---
 
-## Motivation
+## Contributing
 
-I built this project as part of my backend development journey with Boot.dev to strengthen my understanding of building production-style REST APIs. My goal was to move beyond basic CRUD operations and gain hands-on experience with authentication, database design, secure password handling, middleware, and webhook integration. Through this project, I applied TypeScript, Express, PostgreSQL, and Drizzle ORM to build a backend service with real-world functionality, while improving my ability to structure, test, and maintain backend applications.
+Contributions, suggestions, and bug reports are welcome.
+
+1. Fork the repository.
+2. Create a feature branch for your changes.
+3. Implement your changes and test them.
+4. Submit a pull request describing your changes.
+
+Please keep contributions consistent with the existing TypeScript codebase and include tests for new functionality when appropriate.
+
 ## License
 
 This project was created as part of my backend development studies with Boot.dev.
